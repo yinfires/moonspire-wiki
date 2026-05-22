@@ -1,0 +1,170 @@
+.heroBanner {
+  padding: 5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(48, 30, 24, 0.94)),
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.26), transparent 32%);
+  color: #f8fafc;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.heroCopy {
+  max-width: 720px;
+}
+
+.kicker {
+  margin: 0 0 0.75rem;
+  color: #f8d477;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+}
+
+.heroSubtitle {
+  margin: 1rem 0 0;
+  color: #e2e8f0;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 600;
+}
+
+.heroBody {
+  margin: 1.25rem 0 0;
+  max-width: 620px;
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3rem 0;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.previewPanel {
+  border: 1px solid rgba(248, 250, 252, 0.15);
+  border-radius: 8px;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.62);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.cardPreview {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.cardPreview img {
+  width: 96px;
+  image-rendering: pixelated;
+}
+
+.cardPreview span {
+  display: block;
+  color: #f8d477;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.cardPreview strong {
+  display: block;
+  margin: 0.2rem 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.cardPreview p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.assetRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.assetRow img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  image-rendering: pixelated;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.75rem;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 0.75rem 0 0;
+}
+
+.statGrid div {
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.statGrid dt {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.statGrid dd {
+  margin: 0.25rem 0 0;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 640px) {
+  .cardPreview {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .cardPreview img {
+    width: 72px;
+  }
+
+  .statGrid {
+    grid-template-columns: 1fr;
+  }
+}
