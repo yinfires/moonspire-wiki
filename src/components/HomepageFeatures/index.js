@@ -53,8 +53,8 @@ export default function HomepageFeatures() {
     <section className={styles.features}>
       <div className="container">
         <div className={styles.sectionHeader}>
-          <Heading as="h2">当前预览内容</Heading>
-          <p>用月尖塔的黑白图标语言组织资料入口，保持简洁、清晰、可继续扩展。</p>
+          <Heading as="h2">探索月尖塔</Heading>
+          <p>从战斗规则开始，了解卡牌、爬塔路线、制卡台和可选的创作者工具。</p>
         </div>
         <div className="row">
           {FeatureList.map((props, idx) => (

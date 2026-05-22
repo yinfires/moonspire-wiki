@@ -13,14 +13,14 @@ function HomepageHeader() {
       <div className={styles.spireLines} aria-hidden="true" />
       <div className={clsx('container', styles.heroGrid)}>
         <div className={styles.heroCopy}>
-          <p className={styles.kicker}>Moon Spire Archive</p>
+          <p className={styles.kicker}>Moon Spire</p>
           <Heading as="h1" className={styles.heroTitle}>
             {siteConfig.title}
           </Heading>
           <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
           <p className={styles.heroBody}>
-            以月尖塔图标为核心延展出的资料站：黑色界面、月白文字、锐利线框，
-            用简洁结构整理战斗、卡牌、爬塔和创作者工具。
+            挑战怪物，收集卡牌，构筑牌组，在月尖塔的路线中选择战斗房与篝火房，
+            用每一次奖励推进下一场冒险。
           </p>
           <div className={styles.buttons}>
             <Link className={clsx('button button--lg', styles.primaryButton)} to="/docs/intro">
@@ -41,7 +41,7 @@ function HomepageHeader() {
           </div>
           <div className={styles.emblemCaption}>
             <span />
-            <p>月牙、尖塔、冷银线条，构成整站视觉母题。</p>
+            <p>进入月尖塔，围绕塔生命值、塔内卡组和房间奖励完成一轮独立冒险。</p>
           </div>
           <dl className={styles.statGrid}>
             <div>
@@ -68,7 +68,7 @@ export default function Home() {
   return (
     <Layout
       title={siteConfig.title}
-      description="Moon Spire Wiki preview for card combat, tower runs, and developer tools.">
+      description="Moon Spire card combat, tower routes, card forge, and creator tools.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
