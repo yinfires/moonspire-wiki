@@ -7,7 +7,7 @@ const FeatureList = [
   {
     title: '玩法概览',
     href: '/docs/gameplay-overview',
-    image: '/img/moonspire/draw_pile.png',
+    mark: '01',
     description: (
       <>
         战斗流程、卡牌关键词、制卡台转换、爬塔路线和塔内恢复规则。
@@ -17,7 +17,7 @@ const FeatureList = [
   {
     title: '创作者工具',
     href: '/docs/developer-tools',
-    image: '/img/moonspire/card_forge_front.png',
+    mark: '02',
     description: (
       <>
         开发者中心、房间编辑、怪物池、塔配置和自定义内容入口。
@@ -27,7 +27,7 @@ const FeatureList = [
   {
     title: '界面与反馈',
     href: '/docs/ui-animation',
-    image: '/img/moonspire/stomp_wave.png',
+    mark: '03',
     description: (
       <>
         战斗界面、状态提示、出牌动画、弹射物和世界反馈。
@@ -36,11 +36,11 @@ const FeatureList = [
   },
 ];
 
-function Feature({image, title, description, href}) {
+function Feature({mark, title, description, href}) {
   return (
     <div className={clsx('col col--4')}>
       <Link className={styles.featureCard} to={href}>
-        <img className={styles.featureImage} src={image} alt="" />
+        <span className={styles.featureMark}>{mark}</span>
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </Link>
@@ -54,7 +54,7 @@ export default function HomepageFeatures() {
       <div className="container">
         <div className={styles.sectionHeader}>
           <Heading as="h2">当前预览内容</Heading>
-          <p>这不是完整资料库，而是先把最终 wiki 的信息密度和阅读方式搭出来。</p>
+          <p>用月尖塔的黑白图标语言组织资料入口，保持简洁、清晰、可继续扩展。</p>
         </div>
         <div className="row">
           {FeatureList.map((props, idx) => (

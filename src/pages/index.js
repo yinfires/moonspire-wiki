@@ -10,39 +10,38 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={styles.heroBanner}>
+      <div className={styles.spireLines} aria-hidden="true" />
       <div className={clsx('container', styles.heroGrid)}>
         <div className={styles.heroCopy}>
-          <p className={styles.kicker}>Moon Spire Wiki Preview</p>
+          <p className={styles.kicker}>Moon Spire Archive</p>
           <Heading as="h1" className={styles.heroTitle}>
             {siteConfig.title}
           </Heading>
           <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
           <p className={styles.heroBody}>
-            这里是 Moon Spire 的资料库预览：先用少量真实玩法内容展示最终 wiki 的结构、
-            语气和页面效果，后续再继续把战斗、卡牌、爬塔和开发者资料补完整。
+            以月尖塔图标为核心延展出的资料站：黑色界面、月白文字、锐利线框，
+            用简洁结构整理战斗、卡牌、爬塔和创作者工具。
           </p>
           <div className={styles.buttons}>
-            <Link className="button button--primary button--lg" to="/docs/intro">
+            <Link className={clsx('button button--lg', styles.primaryButton)} to="/docs/intro">
               开始浏览
             </Link>
-            <Link className="button button--outline button--secondary button--lg" to="/docs/gameplay-overview">
+            <Link className={clsx('button button--lg', styles.secondaryButton)} to="/docs/gameplay-overview">
               查看玩法
             </Link>
           </div>
         </div>
-        <div className={styles.previewPanel} aria-label="Moon Spire preview assets">
-          <div className={styles.cardPreview}>
-            <img src="/img/moonspire/card_base.png" alt="Moon Spire card base" />
-            <div>
-              <span>费用</span>
-              <strong>卡牌战斗</strong>
-              <p>抽牌、出牌、格挡、状态与怪物意图。</p>
-            </div>
+        <div className={styles.emblemPanel} aria-label="Moon Spire emblem">
+          <div className={styles.emblemFrame}>
+            <span className={styles.cornerTopLeft} />
+            <span className={styles.cornerTopRight} />
+            <span className={styles.cornerBottomLeft} />
+            <span className={styles.cornerBottomRight} />
+            <img src="/img/moonspire/moonspire_icon.png" alt="月尖塔图标" />
           </div>
-          <div className={styles.assetRow}>
-            <img src="/img/moonspire/card_forge_front.png" alt="制卡台纹理" />
-            <img src="/img/moonspire/draw_pile.png" alt="抽牌堆图标" />
-            <img src="/img/moonspire/stomp_wave.png" alt="践踏冲击波贴图" />
+          <div className={styles.emblemCaption}>
+            <span />
+            <p>月牙、尖塔、冷银线条，构成整站视觉母题。</p>
           </div>
           <dl className={styles.statGrid}>
             <div>

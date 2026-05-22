@@ -1,60 +1,93 @@
 .features {
-  padding: 3rem 0;
+  padding: 3.5rem 0;
   width: 100%;
+  background: #090a0c;
+  border-top: 1px solid #2c3338;
 }
 
 .sectionHeader {
   max-width: 720px;
   margin-bottom: 1.5rem;
+  padding-left: 0.25rem;
 }
 
 .sectionHeader h2 {
   margin-bottom: 0.35rem;
+  color: #f2f2ee;
 }
 
 .sectionHeader p {
   margin: 0;
-  color: var(--ifm-color-emphasis-700);
+  color: #a7abb3;
   font-size: 1.05rem;
 }
 
 .featureCard {
+  position: relative;
   display: block;
   height: 100%;
-  padding: 1.25rem;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 8px;
-  color: inherit;
-  background: var(--ifm-background-surface-color);
+  padding: 1.25rem 1.1rem 1.15rem;
+  border: 1px solid #2c3338;
+  border-radius: 0;
+  color: #f2f2ee;
+  background: #15171b;
   text-decoration: none;
   transition:
-    transform 160ms ease,
     border-color 160ms ease,
-    box-shadow 160ms ease;
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.featureCard::before,
+.featureCard::after {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  content: '';
+  border-color: #8ea7b8;
+  border-style: solid;
+  opacity: 0.55;
+}
+
+.featureCard::before {
+  top: 10px;
+  left: 10px;
+  border-width: 1px 0 0 1px;
+}
+
+.featureCard::after {
+  right: 10px;
+  bottom: 10px;
+  border-width: 0 1px 1px 0;
 }
 
 .featureCard:hover {
-  color: inherit;
+  color: #f2f2ee;
   text-decoration: none;
-  border-color: var(--ifm-color-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  border-color: #8ea7b8;
+  background: #181d21;
 }
 
-.featureImage {
-  width: 56px;
-  height: 56px;
+.featureMark {
+  display: inline-grid;
+  min-width: 42px;
+  height: 42px;
   margin-bottom: 1rem;
-  object-fit: contain;
-  image-rendering: pixelated;
+  place-items: center;
+  border: 1px solid #8ea7b8;
+  color: #8ea7b8;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
 .featureCard h3 {
   margin-bottom: 0.5rem;
+  color: #f2f2ee;
 }
 
 .featureCard p {
   margin: 0;
-  color: var(--ifm-color-emphasis-700);
+  color: #a7abb3;
   line-height: 1.7;
 }

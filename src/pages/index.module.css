@@ -1,16 +1,57 @@
 .heroBanner {
-  padding: 5rem 0 4rem;
+  padding: 5rem 0 4.5rem;
   position: relative;
   overflow: hidden;
+  background: #090a0c;
+  color: #f2f2ee;
+  border-bottom: 1px solid #2c3338;
+}
+
+.heroBanner::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  background-image:
+    linear-gradient(#15171b 1px, transparent 1px),
+    linear-gradient(90deg, #15171b 1px, transparent 1px);
+  background-size: 96px 96px;
+  opacity: 0.14;
+}
+
+.heroBanner::after {
+  position: absolute;
+  right: 9%;
+  top: 18%;
+  width: 240px;
+  height: 240px;
+  content: '';
+  border: 2px solid rgba(142, 167, 184, 0.28);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(-18deg);
+  pointer-events: none;
+}
+
+.spireLines {
+  position: absolute;
+  right: 16%;
+  bottom: 0;
+  width: 180px;
+  height: 72%;
+  pointer-events: none;
+  opacity: 0.5;
   background:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(48, 30, 24, 0.94)),
-    radial-gradient(circle at top right, rgba(212, 175, 55, 0.26), transparent 32%);
-  color: #f8fafc;
+    linear-gradient(90deg, transparent 49%, rgba(242, 242, 238, 0.36) 50%, transparent 51%),
+    linear-gradient(90deg, transparent 35%, rgba(142, 167, 184, 0.18) 36%, transparent 37%),
+    linear-gradient(90deg, transparent 68%, rgba(142, 167, 184, 0.18) 69%, transparent 70%);
 }
 
 .heroGrid {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
   gap: 3rem;
   align-items: center;
 }
@@ -21,7 +62,7 @@
 
 .kicker {
   margin: 0 0 0.75rem;
-  color: #f8d477;
+  color: #8ea7b8;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -30,14 +71,14 @@
 
 .heroTitle {
   margin: 0;
-  color: #ffffff;
+  color: #f2f2ee;
   font-size: clamp(3rem, 6vw, 5.5rem);
   line-height: 0.95;
 }
 
 .heroSubtitle {
   margin: 1rem 0 0;
-  color: #e2e8f0;
+  color: #f2f2ee;
   font-size: clamp(1.25rem, 2vw, 1.65rem);
   font-weight: 600;
 }
@@ -45,9 +86,10 @@
 .heroBody {
   margin: 1.25rem 0 0;
   max-width: 620px;
-  color: #cbd5e1;
+  color: #a7abb3;
   font-size: 1.05rem;
   line-height: 1.8;
+  padding-left: 0.25rem;
 }
 
 @media screen and (max-width: 996px) {
@@ -67,83 +109,153 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 2rem;
+  padding-left: 0.25rem;
 }
 
-.previewPanel {
-  border: 1px solid rgba(248, 250, 252, 0.15);
-  border-radius: 8px;
-  padding: 1rem;
-  background: rgba(15, 23, 42, 0.62);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
-}
-
-.cardPreview {
-  display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 1rem;
-  align-items: center;
-  padding: 1rem;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.cardPreview img {
-  width: 96px;
-  image-rendering: pixelated;
-}
-
-.cardPreview span {
-  display: block;
-  color: #f8d477;
-  font-size: 0.85rem;
+.primaryButton,
+.secondaryButton {
+  border-radius: 0;
+  border: 1px solid #8ea7b8;
   font-weight: 700;
 }
 
-.cardPreview strong {
-  display: block;
-  margin: 0.2rem 0;
-  color: #ffffff;
-  font-size: 1.5rem;
+.primaryButton {
+  color: #090a0c;
+  background: #f2f2ee;
 }
 
-.cardPreview p {
-  margin: 0;
-  color: #cbd5e1;
-  line-height: 1.6;
+.primaryButton:hover {
+  color: #090a0c;
+  background: #dce4e8;
 }
 
-.assetRow {
+.secondaryButton {
+  color: #f2f2ee;
+  background: transparent;
+}
+
+.secondaryButton:hover {
+  color: #090a0c;
+  background: #8ea7b8;
+}
+
+.emblemPanel {
+  border: 1px solid #2c3338;
+  padding: 1rem;
+  background: rgba(21, 23, 27, 0.78);
+}
+
+.emblemFrame {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-  margin-top: 0.75rem;
+  min-height: 320px;
+  place-items: center;
+  border: 1px solid rgba(142, 167, 184, 0.42);
+  background: #090a0c;
+  overflow: hidden;
 }
 
-.assetRow img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: contain;
-  image-rendering: pixelated;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 0.75rem;
+.emblemFrame::before,
+.emblemFrame::after {
+  position: absolute;
+  content: '';
+  pointer-events: none;
+}
+
+.emblemFrame::before {
+  width: 62%;
+  height: 62%;
+  border: 1px solid rgba(142, 167, 184, 0.22);
+  border-left-color: transparent;
+  transform: rotate(-18deg);
+}
+
+.emblemFrame::after {
+  width: 1px;
+  height: 88%;
+  background: rgba(242, 242, 238, 0.16);
+}
+
+.emblemFrame img {
+  position: relative;
+  z-index: 1;
+  width: min(58%, 230px);
+  height: auto;
+  image-rendering: crisp-edges;
+}
+
+.cornerTopLeft,
+.cornerTopRight,
+.cornerBottomLeft,
+.cornerBottomRight {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-color: #8ea7b8;
+  border-style: solid;
+  opacity: 0.7;
+}
+
+.cornerTopLeft {
+  top: 12px;
+  left: 12px;
+  border-width: 1px 0 0 1px;
+}
+
+.cornerTopRight {
+  top: 12px;
+  right: 12px;
+  border-width: 1px 1px 0 0;
+}
+
+.cornerBottomLeft {
+  bottom: 12px;
+  left: 12px;
+  border-width: 0 0 1px 1px;
+}
+
+.cornerBottomRight {
+  right: 12px;
+  bottom: 12px;
+  border-width: 0 1px 1px 0;
+}
+
+.emblemCaption {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.emblemCaption span {
+  height: 1px;
+  background: #8ea7b8;
+}
+
+.emblemCaption p {
+  margin: 0;
+  color: #a7abb3;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 .statGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-  margin: 0.75rem 0 0;
+  gap: 1px;
+  margin: 1rem 0 0;
+  background: #2c3338;
+  border: 1px solid #2c3338;
 }
 
 .statGrid div {
   padding: 0.75rem;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #15171b;
 }
 
 .statGrid dt {
-  color: #94a3b8;
+  color: #8ea7b8;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -151,17 +263,13 @@
 
 .statGrid dd {
   margin: 0.25rem 0 0;
-  color: #ffffff;
+  color: #f2f2ee;
   font-weight: 700;
 }
 
 @media screen and (max-width: 640px) {
-  .cardPreview {
-    grid-template-columns: 72px 1fr;
-  }
-
-  .cardPreview img {
-    width: 72px;
+  .emblemFrame {
+    min-height: 260px;
   }
 
   .statGrid {

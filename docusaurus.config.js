@@ -61,7 +61,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/moonspire/card_base.png',
+      image: 'img/moonspire/moonspire_icon.png',
       colorMode: {
         respectPrefersColorScheme: true,
       },
@@ -69,7 +69,7 @@ const config = {
         title: 'Moon Spire',
         logo: {
           alt: 'Moon Spire Logo',
-          src: 'img/moonspire/card_base.png',
+          src: 'img/moonspire/moonspire_icon.png',
         },
         items: [
           {
