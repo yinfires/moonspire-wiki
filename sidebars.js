@@ -20,7 +20,7 @@ const sidebars = {
     {
       type: 'category',
       label: '玩法资料',
-      items: ['gameplay-overview'],
+      items: ['gameplay-overview', 'tower-journey'],
     },
     {
       type: 'category',
